@@ -1,0 +1,23 @@
+{
+  "name": "07_perfect_readme",
+  "version": "1.0.0",
+  "description": "Perfect Readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnsbrook/07_Perfect_Readme.git"
+  },
+  "keywords": [
+    "Perfect",
+    "Readme"
+  ],
+  "author": "Iván J. Zapata-Rivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnsbrook/07_Perfect_Readme/issues"
+  },
+  "homepage": "https://github.com/johnsbrook/07_Perfect_Readme#readme"
+}
