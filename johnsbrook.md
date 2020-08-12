@@ -1,10 +1,11 @@
 
-# Perfect README 
+# Perfect README.md 
 
 
 ## Description 
- Create the perfect Readme Generator
- 
+ This the description of my project:
+
+Create the perfect Readme.md file with this generator 
 
 
 ## Table of Contents 
@@ -12,23 +13,24 @@
 
 ## Installation Instruction 
  
-    npm i 
+    npm install 
 
 
 ## Usage Information 
- Answer the questions to create your README.md file 
+ 
+    Create the perfect readme file 
 
 
 ## License 
- SIL Open Font License 1.1 
+ University of Illinois/NCSA Open Source License 
 
     
 ## Contributing 
- You're welcome to contribute through the github below 
+ These are the instructions 
 
 
 ## Tests 
- This is how you can test the code.  
+ These are the instructions to test my code.  
 
 
 ## Questions 

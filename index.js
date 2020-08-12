@@ -1,8 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-// const markdown = require("markdown.js")
-// const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
 
@@ -10,6 +8,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 // ****************************
 // * ASK THESE QUESTIONS FIRST*
 // ****************************
+
 function promptUser() {
    return inquirer.prompt ([
 // Title of the Project
@@ -66,12 +65,12 @@ function promptUser() {
         }
 ])
 }
+
 // **************************************
 // * THEN, ADD ANSWERS TO THESE SECTIONS*
 // **************************************
 
 function generateReadme(response) {
-    var ticks = "```";
     return `
 # ${response.title} \n
 
@@ -79,9 +78,11 @@ function generateReadme(response) {
 
 ## Table of Contents \n
 
-## Installation Instruction \n ticks git  ${response.installation} \n
+## Installation Instruction \n 
+    ${response.installation} \n
 
-## Usage Information \n ${response.usage} \n
+## Usage Information \n 
+    ${response.usage} \n
 
 ## License \n ${response.license} \n
     
@@ -91,7 +92,7 @@ function generateReadme(response) {
 
 ## Questions \n 
 GitHub: [${response.github}](https://github.com/${response.github}) \n 
-You may reach me by email at: [${response.email}](mailto:${response.email}); 
+You may reach me by email at: [${response.email}](mailto:${response.email})
 `
 }
 
@@ -104,6 +105,19 @@ promptUser()
     })
     
     
+// **********************************
+// *  GENERATED README MUST INCLUDE *
+// **********************************
+
+// Title 
+// Description 
+// Table of Contents 
+// Installation 
+// Usage 
+// License 
+// Contributing 
+// Tests 
+// Questions 
 
     // console.log("# " + response.title);
     // console.log("## Description");
@@ -135,17 +149,4 @@ promptUser()
 
 
 
-// **********************************
-// *  GENERATED README MUST INCLUDE *
-// **********************************
-
-// Title 
-// Description 
-// Table of Contents 
-// Installation 
-// Usage 
-// License 
-// Contributing 
-// Tests 
-// Questions 
 
