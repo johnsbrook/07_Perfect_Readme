@@ -74,21 +74,32 @@ function generateReadme(response) {
     return `
 # ${response.title} \n
 
-## Description \n ${response.description} \n
+## Description \n 
+${response.description} \n
 
 ## Table of Contents \n
 
-## Installation Instruction \n 
-    ${response.installation} \n
+* [Installation](#installation-instructions) \n
+* [Usage](#usage) \n
+* [License](#installation) \n
+* [Contributing](#constributing) \n
+* [Tests](#tests) \n
+* [Questions](#questions) \n
 
 ## Usage Information \n 
     ${response.usage} \n
 
-## License \n ${response.license} \n
-    
-## Contributing \n ${response.contribution} \n
+## Installation Instruction \n 
+    ${response.installation} \n
 
-## Tests \n ${response.test} \n
+## License \n 
+${response.license} \n
+    
+## Contributing \n 
+${response.contribution} \n
+
+## Tests \n 
+${response.test} \n
 
 ## Questions \n 
 GitHub: [${response.github}](https://github.com/${response.github}) \n 
