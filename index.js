@@ -1,10 +1,17 @@
-var inquirer = require("inquirer");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const util = require("util");
+// const markdown = require("markdown.js")
+// const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
+
+
 
 // ****************************
 // * ASK THESE QUESTIONS FIRST*
 // ****************************
-inquirer 
-    .prompt ([
+function promptUser() {
+   return inquirer.prompt ([
 // Title of the Project
         {
             type: "input",
@@ -23,19 +30,19 @@ inquirer
             message: "Enter installation instructions.",
             name: "installation"
         },
-// Usage Information
+// // Usage Information
         {
             type: "editor",
             message: "Enter your user story. Note: Default editor will launch. Enter text, proceed to close editor and click on save.",
             name: "usage"
         },
-// Contribution Guidelines
+// // Contribution Guidelines
         {
             type: "editor",
             message: "Enter instructions on how other can contribute to your project.",
             name: "contribution"
         },
-// Test Instructions
+// // Test Instructions
         {
             type: "editor",
             message: "Enter instructions to test your code.",
@@ -58,38 +65,74 @@ inquirer
             name: "email"
         }
 ])
+}
 // **************************************
 // * THEN, ADD ANSWERS TO THESE SECTIONS*
 // **************************************
-.then(function(response) {
-    console.log("# " + response.title);
-    console.log("## Description");
-    console.log(response.description);
-    console.log("## Table of Contents");
-    console.log("[Installation Instructions](#installation-instructions)");
-    console.log("[Usage Information](#usage-information)");
-    console.log("License");
-    console.log("Contributing");
-    console.log("Tests");
-    console.log("Questions");
-    console.log("## Installation Instructions");
-    console.log("```");
-    console.log(response.installation);
-    console.log("```");
-    console.log("## Usage Information");
-    console.log("```");
-    console.log(response.usage);
-    console.log("```");
-    console.log("## License");
-    console.log("This project is covered under this license: " + response.license + ".");
-    console.log("## Contributing");
-    console.log(response.contribution);
-    console.log("## Tests");
-    console.log(response.test);
-    console.log("## Questions");
-    console.log("GitHub: [" + response.github + "]" + "(https://github.com/" + response.github + ")");
-    console.log("You may reach me by email at: [" + response.email + "]" + "(mailto:" + response.email + ")");
-})
+
+function generateReadme(response) {
+    var ticks = "```";
+    return `
+# ${response.title} \n
+
+## Description \n ${response.description} \n
+
+## Table of Contents \n
+
+## Installation Instruction \n ticks git  ${response.installation} \n
+
+## Usage Information \n ${response.usage} \n
+
+## License \n ${response.license} \n
+    
+## Contributing \n ${response.contribution} \n
+
+## Tests \n ${response.test} \n
+
+## Questions \n 
+GitHub: [${response.github}](https://github.com/${response.github}) \n 
+You may reach me by email at: [${response.email}](mailto:${response.email}); 
+`
+}
+
+
+promptUser()
+    .then(function(response) {
+    const readme = generateReadme(response);
+
+        return writeFileAsync(response.github + ".md", readme);
+    })
+    
+    
+
+    // console.log("# " + response.title);
+    // console.log("## Description");
+    // console.log(response.description);
+    // console.log("## Table of Contents");
+    // console.log("[Installation Instructions](#installation-instructions)");
+    // console.log("[Usage Information](#usage-information)");
+    // console.log("License");
+    // console.log("Contributing");
+    // console.log("Tests");
+    // console.log("Questions");
+    // console.log("## Installation Instructions");
+    // console.log("```");
+    // console.log(response.installation);
+    // console.log("```");
+    // console.log("## Usage Information");
+    // console.log("```");
+    // console.log(response.usage);
+    // console.log("```");
+    // console.log("## License");
+    // console.log("This project is covered under this license: " + response.license + ".");
+    // console.log("## Contributing");
+    // console.log(response.contribution);
+    // console.log("## Tests");
+    // console.log(response.test);
+    // console.log("## Questions");
+    // console.log("GitHub: [" + response.github + "]" + "(https://github.com/" + response.github + ")");
+    // console.log("You may reach me by email at: [" + response.email + "]" + "(mailto:" + response.email + ")");
+
 
 
 // **********************************
