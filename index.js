@@ -27,10 +27,26 @@ inquirer
         {
             type: "editor",
             message: "Enter your user story. Note: Default editor will launch. Enter text, proceed to close editor and click on save.",
-            name: "usage",
+            name: "usage"
         },
 // Contribution Guidelines
+        {
+            type: "editor",
+            message: "Enter instructions on how other can contribute to your project.",
+            name: "contribution"
+        },
 // Test Instructions
+        {
+            type: "editor",
+            message: "Enter instructions to test your code.",
+            name: "test"
+        },
+        {
+            type: "list",
+            message: "Select the license your project is covered under.",
+            name: "license",
+            choices: ["Academic Free License v3.0", "Apache license 2.0", "Artistic license 2.0", "Boost Software License 1.0", "BSD 2-clause 'Simplified' license", "BSD 3-clause Clear license", "Creative Commons license family"]
+        }
 ])
 // **************************************
 // * THEN, ADD ANSWERS TO THESE SECTIONS*
@@ -54,13 +70,15 @@ inquirer
     console.log("```");
     console.log(response.usage);
     console.log("```");
+    console.log("## License");
+    console.log("This project is covered under this license: " + response.license + ".");
+    console.log("## Contributing");
+    console.log(response.contribution);
+    console.log("## Tests");
+    console.log(response.test);
 
 })
-// Description 
-// Installation 
-// Usage 
-// Contributing 
-// Tests 
+
 
 // **********************************
 // *  GENERATED README MUST INCLUDE *
