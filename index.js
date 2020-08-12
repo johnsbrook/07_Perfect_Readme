@@ -28,7 +28,7 @@ inquirer
             type: "editor",
             message: "Enter your user story. Note: Default editor will launch. Enter text, proceed to close editor and click on save.",
             name: "usage",
-        }
+        },
 // Contribution Guidelines
 // Test Instructions
 ])
@@ -39,9 +39,9 @@ inquirer
     console.log("# " + response.title);
     console.log("## Description");
     console.log(response.description);
-    console.log("Table of Contents");
-    console.log("Installation");
-    console.log("Usage Information");
+    console.log("## Table of Contents");
+    console.log("[Installation Instructions](#installation-instructions)");
+    console.log("[Usage Information](#usage-information)");
     console.log("License");
     console.log("Contributing");
     console.log("Tests");
