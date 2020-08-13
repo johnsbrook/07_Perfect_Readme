@@ -71,7 +71,7 @@ function promptUser() {
 
 function generateReadme(response) {
     return `
-# ${response.title} \n
+# ${response.title}  ![License](https://img.shields.io/badge/License-${response.license}-brightgreen.svg)  \n
 
 ## Description \n 
 ${response.description} \n
@@ -92,7 +92,7 @@ ${response.description} \n
     ${response.installation} \n
 
 ## License \n 
-${response.license} ![License](https://img.shields.io/badge/License-${response.license}-brightgreen.svg)  \n
+This application is covered under this license: ${response.license}\n
     
 ## Where to Contribute \n 
 ${response.contribution} \n
