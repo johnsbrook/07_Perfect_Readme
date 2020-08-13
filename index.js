@@ -27,13 +27,13 @@ function promptUser() {
             message: "Enter installation instructions.",
             name: "installation"
         },
-// // Usage Information
+//  Usage Information
         {
             type: "input",
             message: "Enter your user story.",
             name: "usage"
         },
-// // Contribution Guidelines
+//  Contribution Guidelines
         {
             type: "input",
             message: "Enter instructions on how other can contribute to your project.",
@@ -65,9 +65,9 @@ function promptUser() {
 ])
 }
 
-// **************************************
-// * THEN, ADD ANSWERS TO THESE SECTIONS*
-// **************************************
+// ***************************************
+// * THEN, ADD ANSWERS TO THESE SECTIONS *
+// ***************************************
 
 function generateReadme(response) {
     return `
@@ -106,57 +106,17 @@ You may reach me by email at: [${response.email}](mailto:${response.email})
 `
 }
 
-
-promptUser()
-    .then(function(response) {
-    const readme = generateReadme(response);
-
-        return writeFileAsync(response.github + ".md", readme);
-    })
-    
     
 // **********************************
 // *  GENERATED README MUST INCLUDE *
 // **********************************
+promptUser()
+    .then(function(response) {
+    const readme = generateReadme(response);
 
-// Title 
-// Description 
-// Table of Contents 
-// Installation 
-// Usage 
-// License 
-// Contributing 
-// Tests 
-// Questions 
+        return writeFileAsync("README.md", readme);
+    })
 
-    // console.log("# " + response.title);
-    // console.log("## Description");
-    // console.log(response.description);
-    // console.log("## Table of Contents");
-    // console.log("[Installation Instructions](#installation-instructions)");
-    // console.log("[Usage Information](#usage-information)");
-    // console.log("License");
-    // console.log("Contributing");
-    // console.log("Tests");
-    // console.log("Questions");
-    // console.log("## Installation Instructions");
-    // console.log("```");
-    // console.log(response.installation);
-    // console.log("```");
-    // console.log("## Usage Information");
-    // console.log("```");
-    // console.log(response.usage);
-    // console.log("```");
-    // console.log("## License");
-    // console.log("This project is covered under this license: " + response.license + ".");
-    // console.log("## Contributing");
-    // console.log(response.contribution);
-    // console.log("## Tests");
-    // console.log(response.test);
-    // console.log("## Questions");
-    // console.log("GitHub: [" + response.github + "]" + "(https://github.com/" + response.github + ")");
-    // console.log("You may reach me by email at: [" + response.email + "]" + "(mailto:" + response.email + ")");
-
-
-
-
+    .catch(function(err) {
+        console.log(err);
+      });
