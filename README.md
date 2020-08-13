@@ -1,5 +1,5 @@
 
-# Perfect Readme Generator  ![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)
+# Perfect Readme Generator  ![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)  
 
 
 ## Description 
@@ -25,12 +25,12 @@ This project is meant to help the user in creating the perfect Readme file throu
 
 ## Usage Information 
  
-    This generator will allow the user to enter all the information needed inside a Readme file without having to use the editor or syntax.   
+    This generator will allow the user to enter all the information needed inside a Readme file without having to use the editor or syntax.    
 
 
 ## Installation Instructions 
  
-    npm i  
+    npm i   
 
 
 ## License 
@@ -50,6 +50,6 @@ The user will need a VS Code or another editor that has Node.js installed in the
 
 ## Questions 
  
-GitHub: [Ivan](https://github.com/Ivan) 
+GitHub: [johnsbrook](https://github.com/johnsbrook) 
  
-You may reach me by email at: [ivan@email.com](mailto:ivan@email.com)
+You may reach me by email at: [emailaddress@gmail.com](mailto:emailaddress@gmail.com)
