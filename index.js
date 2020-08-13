@@ -92,7 +92,7 @@ ${response.description} \n
     ${response.installation} \n
 
 ## License \n 
-${response.license} [![License](https://img.shields.io/badge/License-${response.license}-brightgreen.svg)]  \n
+${response.license} ![License](https://img.shields.io/badge/License-${response.license}-brightgreen.svg)  \n
     
 ## Where to Contribute \n 
 ${response.contribution} \n
