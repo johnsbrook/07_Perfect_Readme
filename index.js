@@ -3,8 +3,6 @@ const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 
-
-
 // ****************************
 // * ASK THESE QUESTIONS FIRST*
 // ****************************
@@ -20,7 +18,7 @@ function promptUser() {
 // Description of the Project
         {
             type: "input", 
-            message: "Type the description of your project. Note: Default editor will launch. Enter text, proceed to close editor and click on save.",
+            message: "Type the description of your project.",
             name: "description"
         },
 // Installation Instructions
@@ -32,7 +30,7 @@ function promptUser() {
 // // Usage Information
         {
             type: "input",
-            message: "Enter your user story. Note: Default editor will launch. Enter text, proceed to close editor and click on save.",
+            message: "Enter your user story.",
             name: "usage"
         },
 // // Contribution Guidelines
