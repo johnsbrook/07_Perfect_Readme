@@ -46,6 +46,21 @@ function promptUser() {
             name: "test"
         },
         {
+            type: "input",
+            message: "Enter the location of your repository.",
+            name: "repository"
+        },
+        {
+            type: "input",
+            message: "What's the name of your repository host?",
+            name: "host"
+        },
+        {
+            type: "input",
+            message: "Enter URL where your work is deployed.",
+            name: "url"
+        },
+        {
             type: "list",
             message: "Select the license your project is covered under.",
             name: "license",
@@ -62,7 +77,11 @@ function promptUser() {
             message: "What's your email address?",
             name: "email"
         }
-])
+]).then(function(){
+    inquirer.prompt([
+        console.log("Don't forget to create an images folder and include your screenshot image under \'screenshot.png\' file name.")
+    ])
+})
 }
 
 // ***************************************
@@ -84,6 +103,7 @@ ${response.description} \n
 * [Where to Contribute](#where-to-contribute) \n
 * [Tests](#tests) \n
 * [Questions](#questions) \n
+* [Screenshots](#screenshots) \n
 
 ## Usage Information \n 
     ${response.usage} \n
@@ -100,9 +120,18 @@ ${response.contribution} \n
 ## Tests \n 
 ${response.test} \n
 
+## GitHub Repository \n 
+[${response.repository}](${response.repository}) \n
+
+## URL \n 
+[${response.url}](${response.url}) \n
+
 ## Questions \n 
 GitHub: [${response.github}](https://github.com/${response.github}) \n 
 You may reach me by email at: [${response.email}](mailto:${response.email})
+
+## Screenshot \n 
+![Getting Started](images/screenshot.png) \n 
 `
 }
 
