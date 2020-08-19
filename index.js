@@ -39,7 +39,7 @@ function promptUser() {
             message: "Enter instructions on how other can contribute to your project.",
             name: "contribution"
         },
-// // Test Instructions
+// Test Instructions
         {
             type: "input",
             message: "Enter instructions to test your code.",
@@ -52,7 +52,7 @@ function promptUser() {
         },
         {
             type: "input",
-            message: "What's the name of your repository host?",
+            message: "What\'s the name of your repository host?",
             name: "host"
         },
         {
@@ -65,11 +65,10 @@ function promptUser() {
             message: "Select the license your project is covered under.",
             name: "license",
             choices: ["AFLv3.0", "Apache2.0", "Artistic2.0", "BSLv1.0", "BSD2", "BSD3", "Creative_Commons", "Creative_Commons_Zero_v1.0", "Creative_Commons_Attribution_4.0", "Creative_Commons_Attribution_Share_Alike_4.0", "Do_What_the_F*ck_You_Want_to_Public_License", "ECLv2.0", "Eclipse1.0", "EUv1.1", "GNUAffero3.0", "GNU", "GNUv2.0", "GNUv3.0", "GNULesser", "GNUv2.1", "GNULesserv3.0", "ISC", "LaTeXv1.3c", "Microsoft", "MIT", "Mozilla2.0", "OpenSoftware3.0", "PostgreSQL", "SIL_Open_Font1.1", "University_of_Illinois/NCSA", "Unlicense", "zLib"]
-            // choices: "MIT"
         }, 
         {
             type: "input",
-            message: "What's your GitHub username?",
+            message: "What\'s your GitHub username?",
             name: "github"
         },
         {
@@ -77,11 +76,7 @@ function promptUser() {
             message: "What's your email address?",
             name: "email"
         }
-]).then(function(){
-    inquirer.prompt([
-        console.log("Don't forget to create an images folder and include your screenshot image under \'screenshot.png\' file name.")
-    ])
-})
+])
 }
 
 // ***************************************
@@ -89,6 +84,7 @@ function promptUser() {
 // ***************************************
 
 function generateReadme(response) {
+    console.log("Don't forget to create an images folder and include your screenshot image under \'screenshot.png\' file name.");
     return `
 # ${response.title}  ![License](https://img.shields.io/badge/License-${response.license}-brightgreen.svg)  \n
 
@@ -102,6 +98,8 @@ ${response.description} \n
 * [License](#license) \n
 * [Where to Contribute](#where-to-contribute) \n
 * [Tests](#tests) \n
+* [Repository](#repository) \n
+* [URL](#url) \n
 * [Questions](#questions) \n
 * [Screenshots](#screenshots) \n
 
@@ -120,15 +118,15 @@ ${response.contribution} \n
 ## Tests \n 
 ${response.test} \n
 
-## GitHub Repository \n 
-[${response.repository}](${response.repository}) \n
+## Repository \n 
+This repository is hosted in ${response.host} and you may access it at [${response.repository}](${response.repository}). \n
 
 ## URL \n 
 [${response.url}](${response.url}) \n
 
 ## Questions \n 
 GitHub: [${response.github}](https://github.com/${response.github}) \n 
-You may reach me by email at: [${response.email}](mailto:${response.email})
+Email: [${response.email}](mailto:${response.email})
 
 ## Screenshot \n 
 ![Getting Started](images/screenshot.png) \n 
