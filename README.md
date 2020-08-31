@@ -4,7 +4,7 @@
 
 ## Description 
  
-This project is meant to help the user in creating the perfect Readme file through this generator without using syntax. 
+This project is meant to help the user in creating the perfect Readme file through this generator without using syntax. Click on this [YouTube Link](https://www.youtube.com/watch?v=PrpZc8VzfBM&t=2s) for a video demonstration of how this app works.
 
 
 ## Table of Contents 

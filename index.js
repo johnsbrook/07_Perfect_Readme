@@ -122,7 +122,7 @@ ${response.test} \n
 This repository is hosted in ${response.host} and you may access it at [${response.repository}](${response.repository}). \n
 
 ## URL \n 
-[${response.url}](${response.url}) \n
+[${response.title}](${response.url}) \n
 
 ## Questions \n 
 GitHub: [${response.github}](https://github.com/${response.github}) \n 
